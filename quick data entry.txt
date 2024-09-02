@@ -1,0 +1,25 @@
+Для быстрого ввода данных, скопируйте текст ниже между угловыми скобками и вставьте в терминал.
+
+<add
+key1
+12345
+add
+key2
+abcdef
+add
+12.34
+43.21
+add
+key2
+zx-spectrum
+add
+key3
+qwerty
+add
+key3
+valu1
+add
+key4
+value2
+print
+>
