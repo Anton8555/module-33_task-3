@@ -1,10 +1,10 @@
 #include <sstream>
 #include <iostream>
-#include <time.h>
+//#include <time.h>
 #include <vector>
 #include <string>
 #include <exception>
-#include <assert.h>
+//#include <assert.h>
 
 // description of the type of data types
 enum type_data {
@@ -56,36 +56,16 @@ public:
     // destructor
     ~Registry() {}
 
-    // setters
-    void setKey(T_key inKey)
-    {
-        key = inKey;
-    }
-    void setValue(T_value inValue)
-    {
-        value = inValue;
-    }
-
-    // getters
-    [[nodiscard]] const T_key getKey() const
-    {
-        return key;
-    }
-    [[nodiscard]] const T_value getValue() const
-    {
-        return value;
-    }
-
     // methods
     // getting the key and value in the string representation
-    [[nodiscard]] virtual std::string toString() const
+    [[nodiscard]] std::string toString() const
     {
         std::stringstream ss;
         ss << key << ": " << value;
         return ss.str();
     }
     // comparing data with a key
-    [[nodiscard]] virtual bool equal_to_the_key(const Data & data) const
+    [[nodiscard]] bool equal_to_the_key(const Data & data) const
     {
         std::stringstream ss;
         ss << key;
@@ -256,6 +236,7 @@ int main()
             dictionary_print(dictionary_result, "Find");
         }
         else if(command == "end") {
+            dictionary_destroy();
             break;
         }
         else
